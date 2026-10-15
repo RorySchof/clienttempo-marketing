@@ -6,7 +6,7 @@ export function Toolkit() {
       <div className="shell">
         <header className="section-head">
           <h2>One toolkit. Five practical ways to save time.</h2>
-          <p>Everything you need is together in one simple dashboard.</p>
+          <p>Practical AI tools for real estate professionals.</p>
         </header>
         <DashboardPreview />
       </div>

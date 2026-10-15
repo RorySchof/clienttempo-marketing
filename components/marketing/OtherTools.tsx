@@ -1,9 +1,17 @@
 import { listingCopy, listingNotes, openHouse, showingNotes } from "@/lib/demo-data";
-import { Fields } from "./ui";
+import { BulletBlock, Fields, Insight } from "./ui";
 
-function ClientEmail({
-  title,
-  tag,
+type EmailContent = {
+  greeting: string;
+  lead: string;
+  bridge?: string;
+  closing?: string;
+  signoff: string;
+  snapshotTitle: string;
+  snapshot: { label: string; value: string }[];
+};
+
+function EmailBody({
   greeting,
   lead,
   bridge,
@@ -11,35 +19,19 @@ function ClientEmail({
   signoff,
   snapshotTitle,
   snapshot,
-}: {
-  title: string;
-  tag: string;
-  greeting: string;
-  lead: string;
-  bridge?: string;
-  closing: string;
-  signoff: string;
-  snapshotTitle: string;
-  snapshot: { label: string; value: string }[];
-}) {
+}: EmailContent) {
   return (
-    <article className="doc-card">
-      <header className="doc-bar">
-        <h3 className="doc-bar-title">{title}</h3>
-        <span className="doc-tag">{tag}</span>
-      </header>
-      <div className="doc-body window-scroll">
-        <p className="letter-body">{greeting}</p>
-        <p className="letter-body email-gap">{lead}</p>
-        {bridge ? <p className="letter-body email-gap">{bridge}</p> : null}
-        <div className="snapshot-embed">
-          <p className="snapshot-title">{snapshotTitle}</p>
-          <Fields rows={snapshot} />
-        </div>
-        <p className="letter-body email-gap">{closing}</p>
-        <p className="letter-body email-gap">{signoff}</p>
+    <>
+      <p className="letter-body">{greeting}</p>
+      <p className="letter-body email-gap">{lead}</p>
+      {bridge ? <p className="letter-body email-gap">{bridge}</p> : null}
+      <div className="snapshot-embed">
+        <p className="snapshot-title">{snapshotTitle}</p>
+        <Fields rows={snapshot} />
       </div>
-    </article>
+      {closing ? <p className="letter-body email-gap">{closing}</p> : null}
+      <p className="letter-body email-gap">{signoff}</p>
+    </>
   );
 }
 
@@ -63,17 +55,36 @@ export function OtherTools() {
                 <p className="rough-notes">{showingNotes.rough}</p>
               </div>
               <p className="becomes">becomes</p>
-              <ClientEmail
-                title="Client email"
-                tag="You review before sending"
-                greeting={showingNotes.greeting}
-                lead={showingNotes.lead}
-                bridge={showingNotes.bridge}
-                closing={showingNotes.closing}
-                signoff={showingNotes.signoff}
-                snapshotTitle="Showing Snapshot"
-                snapshot={showingNotes.snapshot}
-              />
+              <article className="doc-card">
+                <div className="window-scroll">
+                  <header className="doc-bar">
+                    <h3 className="doc-bar-title">Internal Summary</h3>
+                    <span className="doc-tag">Not sent to client</span>
+                  </header>
+                  <div className="doc-body">
+                    <Fields
+                      rows={[{ label: "Client sentiment", value: showingNotes.sentiment }]}
+                    />
+                    <Insight title="Coach's Insight" text={showingNotes.coaching} />
+                    <BulletBlock title="Action Items" items={showingNotes.actionItems} />
+                    <BulletBlock title="Follow-ups" items={showingNotes.followUps} />
+                  </div>
+                  <header className="doc-bar">
+                    <h3 className="doc-bar-title">Client email</h3>
+                    <span className="doc-tag">You review before sending</span>
+                  </header>
+                  <div className="doc-body">
+                    <EmailBody
+                      greeting={showingNotes.greeting}
+                      lead={showingNotes.lead}
+                      bridge={showingNotes.bridge}
+                      signoff={showingNotes.signoff}
+                      snapshotTitle="Showing Snapshot"
+                      snapshot={showingNotes.snapshot}
+                    />
+                  </div>
+                </div>
+              </article>
             </div>
           </article>
         </div>
@@ -97,16 +108,35 @@ export function OtherTools() {
                 <p className="rough-notes">{openHouse.rough}</p>
               </div>
               <p className="becomes">becomes</p>
-              <ClientEmail
-                title="Seller report"
-                tag="You review before sending"
-                greeting={openHouse.greeting}
-                lead={openHouse.lead}
-                closing={openHouse.closing}
-                signoff={openHouse.signoff}
-                snapshotTitle="Open House Snapshot"
-                snapshot={openHouse.snapshot}
-              />
+              <article className="doc-card">
+                <div className="window-scroll">
+                  <header className="doc-bar">
+                    <h3 className="doc-bar-title">Seller report</h3>
+                    <span className="doc-tag">You review before sending</span>
+                  </header>
+                  <div className="doc-body">
+                    <EmailBody
+                      greeting={openHouse.greeting}
+                      lead={openHouse.lead}
+                      closing={openHouse.closing}
+                      signoff={openHouse.signoff}
+                      snapshotTitle="Open House Snapshot"
+                      snapshot={openHouse.snapshot}
+                    />
+                  </div>
+                  <header className="doc-bar">
+                    <h3 className="doc-bar-title">Internal Summary</h3>
+                    <span className="doc-tag">Not sent to seller</span>
+                  </header>
+                  <div className="doc-body">
+                    <Fields
+                      rows={[{ label: "Interest level", value: openHouse.interestLevel }]}
+                    />
+                    <Insight title="Coach's Insight" text={openHouse.coaching} />
+                    <BulletBlock title="Action Items" items={openHouse.actionItems} />
+                  </div>
+                </div>
+              </article>
             </div>
           </article>
         </div>

@@ -70,7 +70,6 @@ export function RealtorReplyDemo() {
               ]}
             />
             <Insight title="Coach's Insight" items={coachInsight} />
-            <p className="doc-kicker">Act</p>
             <BulletBlock title="Action Items" items={actionItems} />
             <BulletBlock title="Follow-ups" items={followUps} />
           </DocumentCard>
@@ -78,10 +77,12 @@ export function RealtorReplyDemo() {
           <div className="draft">
             <DocumentCard title="Draft Reply" tag="You review before sending">
               <p className="letter-body">{draftReply}</p>
-              <p className="draft-note">
-                This is the client-facing draft. The summary above stays with
-                you. Copy it, edit it, and send it yourself.
-              </p>
+              <div className="reply-actions" aria-hidden="true">
+                <span className="btn btn-primary btn-disabled">Save Changes</span>
+                <span className="btn btn-secondary">Edit</span>
+                <span className="btn btn-primary">Send to Client</span>
+                <span className="btn btn-secondary">Copy Reply</span>
+              </div>
             </DocumentCard>
           </div>
         </div>

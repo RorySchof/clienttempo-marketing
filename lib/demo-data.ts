@@ -19,90 +19,90 @@ Jordan`,
 
 export const replySummary = {
   status: "Warm client",
-  factors: "Kitchen renovation; Commute; Offer timing",
+  factors: "Property condition; Competing interest and timing; Commute",
   momentum:
-    "Wants answers before Thursday, when another buyer may decide on Cedar.",
+    "Possible decision by Thursday; wants to determine next steps before the week gets away",
 };
 
 export const coachInsight = [
-  "Cedar is the house they pictured. Maple is the safer comparison, not the favorite.",
-  "The stall is the kitchen, not the price. Find out what “tired” means before anyone talks about an offer.",
-  "Thursday is their deadline, and it may be softer than it sounds. Confirm the other interest before they rush.",
+  "Cedar is the client’s current anchor, but uncertainty about the kitchen and the possible Thursday deadline are keeping the decision open; the client is asking for a near-term path forward, not committing to either home.",
 ];
 
 export const actionItems = [
-  "Ask the Cedar listing agent what is known about the kitchen, the floor, and any permits.",
-  "Check a weekday morning drive from Maple to their office.",
-  "Hold time Thursday to walk through those two answers.",
+  "Ask the listing agent for 18 Cedar Lane whether Thursday is a firm decision deadline.",
+  "Ask the listing agent for 18 Cedar Lane what is known about the kitchen cabinets and flooring, including whether they may need renovation.",
 ];
 
 export const followUps = [
-  "Send the kitchen and permit notes before they decide whether to write.",
-  "If they still want a side-by-side, have that conversation directly.",
-  "Ask whether they want a second look at Cedar this weekend.",
+  "Relay the listing agent’s answers and work through the options and next steps with the client before Thursday.",
 ];
 
-export const draftReply = `Jordan,
+export const draftReply = `Hi Jordan,
 
-Thanks for laying this out so clearly. Cedar is the one that stayed with you, and the kitchen is the open question. I'll ask the listing agent what they know about the cabinets, the floor, and any permits, and I'll send you what I hear.
+We don’t need to choose a house in this email. I’ll check with the listing agent about the Cedar kitchen and whether Thursday is a firm deadline. Once I hear back, we can work through what makes sense before the week gets away from us, including how the Maple commute fits into your decision.
 
-I'll also check a normal weekday morning drive from Maple, so the commute is not a guess.
-
-On Thursday I'll come back with those two answers before we talk about an offer. If the other interest on Cedar is real, we'll know that too. Nothing needs to be decided in the meantime.
-
-Alex Morgan`;
+Best,`;
 
 export const showingNotes = {
-  rough: `Priya + Evan — Saturday
-
-9 Birch Court
+  rough: `9 Birch Court:
 light in the living room — they stayed there
 porch was an easy yes
 primary closet tight, Priya said so
 asked for disclosures and the HOA summary
 want another look on a weekday morning
 
-27 Harbor Ave
+27 Harbor Ave:
 kitchen already done, they clocked it
 front rooms noisy — Evan thinks it's the bus
 not the house they pictured`,
-  greeting: "Hi Priya and Evan,",
-  lead: "Two different houses today. Birch Court had the light you kept coming back to. Harbor Avenue was the finished kitchen, and the street noise was hard to ignore.",
+  greeting: "Hi Priya,",
+  lead: "You both had clear reactions today, which makes the next look especially useful. That porch felt like an easy yes, and the tighter closet is worth seeing in person again before you decide how much it matters.",
   bridge:
     "Here's a quick breakdown of what stood out at each property and how they compare:",
-  closing:
-    "I'll send the Birch Court disclosures and HOA summary. If you want that weekday morning walk-through, we can set it.",
-  signoff: "Talk soon,\nAlex Morgan\nNorthline Realty",
+  signoff: "Warmly,",
   snapshot: [
     {
       label: "Properties viewed",
       value:
-        "9 Birch Court — morning light, tight primary closet. 27 Harbor Avenue — finished kitchen, street noise.",
+        "9 Birch Court: bright living room, porch felt like an easy yes, tight primary closet.\n27 Harbor Ave: kitchen already done, noise in the front rooms that may be from the bus, not the home you pictured.",
     },
     {
       label: "Top highlights",
-      value: "The porch and the light at Birch Court. The finished kitchen at Harbor Avenue.",
+      value:
+        "The most immediate positives were features that felt ready to enjoy: an inviting porch and a kitchen that was already done.",
     },
     {
       label: "Key concerns",
-      value: "Closet size at Birch Court. Weekday noise at Harbor Avenue.",
+      value:
+        "The tight primary closet at Birch and the noise in Harbor's front rooms are the clearest sticking points. Harbor also didn't match the home you had pictured.",
     },
     {
       label: "Decision factors",
       value:
-        "A bright, older layout against a finished kitchen on a louder street.",
+        "Birch's closet is still an open question, while Harbor's finished kitchen may not make up for the noise or the mismatch with what you were looking for. It's not yet clear how much location versus layout matters most to you.",
     },
     {
       label: "Overall",
       value:
-        "Birch Court fits how they want the house to feel. Harbor Avenue is the finish-level comparison.",
+        "Birch seems worth another look, and a weekday morning visit can help you judge the feel of the home and the closet more closely. The requested disclosures and HOA summary will add useful context.",
     },
+  ],
+  sentiment:
+    "Mixed: the porch and living room at 9 Birch Court landed well, but the closet gave Priya pause, and 27 Harbor Ave wasn't the home you pictured.",
+  coaching:
+    "Priya seemed more engaged at Birch, but don't assume the tight closet is a dealbreaker or brush it off. Use the weekday revisit to find out whether it works for her day to day, and ask directly how much location versus layout matters before steering them elsewhere.",
+  actionItems: [
+    "Get the disclosures and HOA summary for 9 Birch Court to Priya and Evan.",
+    "Coordinate a weekday morning second look at 9 Birch Court.",
+  ],
+  followUps: [
+    "Priya and Evan asked for the disclosures and HOA summary for 9 Birch Court.",
+    "Priya and Evan want another look at 9 Birch Court on a weekday morning.",
   ],
 };
 
 export const openHouse = {
-  rough: `14 Willow — Dana Okonkwo
-Sat open, about 16 people
+  rough: `Sat open, about 16 people
 
 kitchen: several stayed, the light was the comment
 backyard / fence: people went back out
@@ -113,40 +113,46 @@ a buyer asked how nearby sales compare
 price questions from people who lingered, not the neighbors
 front rooms were a walk-through`,
   greeting: "Hi Dana,",
-  lead: "The house had a steady afternoon. People moved through the front rooms, then stayed where the light and the yard were.",
-  closing:
-    "I'll send the roof age and the basement note to the couple who stayed, and answer the buyer who asked about nearby sales.",
-  signoff: "Talk soon,\nAlex Morgan\nNorthline Realty",
+  lead: "The open house drew about 16 people, with visitors spending time in the kitchen and going back out to the backyard. One couple stayed about 25 minutes and asked what writing an offer involves. An agent has also followed up and booked a second showing, which is a concrete next step, though it doesn’t tell us whether an offer is coming.",
+  closing: "Thank you for welcoming visitors through the home.",
+  signoff: "Warmly,",
   snapshot: [
-    { label: "Turnout", value: "16 visitors" },
+    { label: "Visitors", value: "About 16" },
+    { label: "Time spent", value: "One couple stayed about 25 minutes" },
+    { label: "Second showing", value: "Booked after an agent followed up" },
     {
-      label: "Serious interest",
-      value: "One couple stayed about 25 minutes and asked about an offer",
-    },
-    {
-      label: "What landed",
-      value: "Kitchen light, the fenced yard, and the quiet block",
+      label: "Visitor activity",
+      value:
+        "Several stayed in the kitchen; visitors went back out to the backyard and fence; front rooms were a walk-through; kitchen light drew comment",
     },
     {
       label: "Questions",
-      value: "Roof age, whether the basement can be finished, nearby sales",
+      value:
+        "Offer-writing process; roof age; whether the basement can be finished; nearby sales",
     },
     {
-      label: "Market read",
+      label: "Feedback to note",
       value:
-        "The kitchen and yard landed. The unfinished basement came up as a question, not a rejection.",
+        "Visitors who lingered asked about price; neighbors were not included in those questions",
     },
-    {
-      label: "Next steps",
-      value:
-        "Follow up with the couple who stayed, and with the buyer who asked about nearby sales.",
-    },
+  ],
+  interestLevel:
+    "One couple stayed about 25 minutes and asked what writing an offer looks like. An agent has followed up and booked a second showing, a concrete next-step signal, though the notes don’t establish whether an offer is likely.",
+  coaching:
+    "The booked second showing is the clearest next-step signal; don’t assume it’s the couple who stayed 25 minutes unless you’ve confirmed that. The offer-process question shows engagement, not likely offer intent. Price questions came from visitors who lingered, but the notes give no count or specific wording, so treat them as a signal to listen for repeat, not a pricing verdict.",
+  actionItems: [
+    "Have the roof age, basement-finishing information, nearby-sale context and offer-process basics ready to address.",
   ],
 };
 
-export const listingNotes = `1920 bungalow on a quiet block, a short walk from the park. Three bedrooms, one updated bath. Original oak floors, a deep front porch, and a kitchen with new counters but the original cabinets. Gas fireplace. Unfinished basement with usable ceiling height. Saturday market is within walking distance.`;
+export const listingNotes = `1920 bungalow on a quiet, tree-lined street.
+3 bedrooms, 1 updated bath.
+Original oak floors, deep front porch, gas fireplace. Old-house charm.
+Kitchen has new countertops, original cabinets.
+Unfinished basement with good ceiling height; hobby or workshop potential.
+Warm, welcoming feel. Walk to park and Saturday farmers market.`;
 
-export const listingCopy = `Set on a quiet block a short walk from the park, this 1920 bungalow keeps the details that make the house feel settled: original oak floors, a deep front porch, and a gas fireplace. Three bedrooms share one updated bath. The kitchen has new counters and the original cabinets. Downstairs, the basement is unfinished, with ceiling height that leaves the space usable. The Saturday market is within walking distance.`;
+export const listingCopy = `Set on a quiet, tree-lined street, this 1920 bungalow pairs original character with thoughtful updates. Three bedrooms and an updated bath complement original oak floors, a deep front porch, and a gas fireplace that adds warmth and charm. The kitchen features new countertops alongside its original cabinets. An unfinished basement with good ceiling height offers potential for a hobby or workshop space. The welcoming home is within walking distance of a park and the Saturday farmers market.`;
 
 export const realGpt = {
   question:

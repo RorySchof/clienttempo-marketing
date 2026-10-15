@@ -11,10 +11,9 @@ export function Hero() {
             houses, listings, and more.
           </p>
           <p className="support-copy">
-            ClientTempo helps you handle the repetitive work that comes with
-            every client, showing, and listing, providing useful insight along
-            the way, helping you stay polished and professional, and leaving
-            more time for the work that matters.
+            ClientTempo helps you handle the work that comes with every client,
+            showing, and listing. Get useful insights, communicate
+            professionally, and spend more time on the work that matters.
           </p>
           <div className="cta-row">
             <a className="btn btn-primary" href={links.signUp}>
